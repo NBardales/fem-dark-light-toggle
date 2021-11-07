@@ -1,0 +1,6 @@
+@use '../util/' as *;
+// Research: if you use "use" you can use a namespace to differentiate between multiple styles.
+
+.card {
+    padding: rem(20);
+}
