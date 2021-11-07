@@ -1,15 +1,9 @@
 @use '../util/' as *;
 
-/**
-* Source: https://codepen.io/aardrian/pen/JgLGPB
-* 
-* STRUCTURE:
-* .toggle-container
-*     |
-*     |— .toggles
-*       |
-*       |— button
-*
+/*
+https://kittygiraudel.com/2021/04/05/an-accessible-toggle/
+https://adrianroselli.com/2019/08/under-engineered-toggles-too.html
+https://codepen.io/aardrian/pen/JgLGPB
 */
 
 .toggles [aria-pressed] {
@@ -20,7 +14,7 @@
     background: none;
     // font: inherit;
     font-size: rem(14);
-    color: var(--dark-text1);
+    color: var(--dark-text-sec);
     font-weight: 700;
     line-height: inherit;
     text-align: left;

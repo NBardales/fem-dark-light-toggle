@@ -1,7 +1,7 @@
 :root {
-    // Primary
-    --limegreen: hsl(163, 72%, 41%);
-    --brightred: hsl(356, 69%, 56%);
+    // General
+    --change-up: hsl(163, 72%, 41%);
+    --change-down: hsl(356, 69%, 56%);
     --facebook: hsl(208, 92%, 53%);
     --twitter: hsl(203, 89%, 53%);
     --instagram-start: hsl(37, 97%, 70%);
@@ -17,13 +17,13 @@
     --dark-bg: hsl(230, 17%, 14%);
     --dark-top-bg: hsl(232, 19%, 15%);
     --dark-card: hsl(228, 28%, 20%);
-    --dark-text1: hsl(228, 34%, 66%);
-    --dark-text2: hsl(0, 0%, 100%);
+    --dark-text-primary: hsl(0, 0%, 100%);
+    --dark-text-sec: hsl(228, 34%, 66%);
 
     // Light Theme
     --light-bg: hsl(0, 0%, 100%);
     --light-top-bg: hsl(225, 100%, 98%);
     --light-card: hsl(227, 47%, 96%);
-    --light-text1: hsl(228, 12%, 44%);
-    --light-text2: hsl(230, 17%, 14%);
+    --light-text-primary: hsl(230, 17%, 14%);
+    --light-text-sec: hsl(228, 12%, 44%);
 }

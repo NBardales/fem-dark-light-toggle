@@ -1,54 +1,118 @@
 @use '../util/' as *;
 // Research: if you use "use" you can use a namespace to differentiate between multiple styles.
 
+.cards{
+    @include breakpoint(medium){
+        // set up a 2-col grid
+    }
+
+    @include breakpoint(large){
+        // set up a 4-col grid
+    }
+}
+
 .card {
+    background: var(--dark-card);
+    color: var(--dark-text-sec);
+    padding: rem(26);
+    border-radius: rem(3);
+    font-size: rem(12);
+    font-weight: 700;
+    text-align: center;
     
-    &__icon {
 
-        &--facebook {
+    // LARGE CARD
+    &.large {
+        border-top: 4px solid;
+        margin-bottom: rem(24);
 
+        @include breakpoint(large){
+            max-width: rem(255);
+            max-height: rem(215);
         }
 
-        &--twitter {
-            
+        // VARIATIONS
+        &.facebook {
+            border-color: var(--facebook);
+        }
+    
+        &.twitter {
+            border-color: var(--twitter);
         }
 
-        &--instagram {
-            
+        /* Gradient borders aren't supported by using CSS (https://www.geeksforgeeks.org/gradient-borders) */
+    &.instagram {
+        border-color: var(--transparent);
+        border-image: linear-gradient(to right, var(--instagram-start), var(--instagram-end));
+        border-image-slice: 1;
+    }
+
+    &.youtube {
+        border-color: var(--youtube);
+    }
+    }
+
+    // SMALL CARD
+    &.small {
+        margin-bottom: rem(16);
+    }
+
+    // RESET PARAGRAPH STYLES FOR CARD ONLY
+    & p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.1;
+    }    
+
+    // CARD HEADER
+    .platform {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // .icon {}
+
+        // .username {}
+    }
+
+    //CARD CONTENT
+    .content {
+        
+        .count {
+            color: var(--dark-text-primary);
+            font-size: rem(56);
+            letter-spacing: rem(-2);
         }
 
-        &--youtube {
-            
+        .label {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.5em;
         }
     }
 
-    &__username {
+    // CARD FOOTER
+    .change {
 
-    }
-
-    &__count {
-
-        &--big {
-
+        & p{
+            display: inline-block;
         }
 
-        &--small {
+        &.increase {
+            color: var(--change-up);
 
+            &::before{
+                content: "▴";
+            }
+        }
+
+        &.decrease {
+            color: var(--change-down);
+
+            &::before{
+                content: "▾";
+            }
         }
     }
 
-    &__label {
-
-    }
-
-    &__change {
-
-        &--up {
-
-        }
-
-        &--down {
-            
-        }
-    }
 }
