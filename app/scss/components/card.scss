@@ -2,5 +2,53 @@
 // Research: if you use "use" you can use a namespace to differentiate between multiple styles.
 
 .card {
-    padding: rem(20);
+    
+    &__icon {
+
+        &--facebook {
+
+        }
+
+        &--twitter {
+            
+        }
+
+        &--instagram {
+            
+        }
+
+        &--youtube {
+            
+        }
+    }
+
+    &__username {
+
+    }
+
+    &__count {
+
+        &--big {
+
+        }
+
+        &--small {
+
+        }
+    }
+
+    &__label {
+
+    }
+
+    &__change {
+
+        &--up {
+
+        }
+
+        &--down {
+            
+        }
+    }
 }

@@ -1,2 +1,2 @@
-"use strict";console.log("Hello world");
+"use strict";function toggle(e){var t=document.getElementById(e);"false"==t.getAttribute("aria-pressed")?t.setAttribute("aria-pressed","true"):t.setAttribute("aria-pressed","false")}console.log("Hello world");
 //# sourceMappingURL=script.js.map
