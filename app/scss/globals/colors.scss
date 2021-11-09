@@ -17,6 +17,7 @@
     --dark-bg: hsl(230, 17%, 14%);
     --dark-top-bg: hsl(232, 19%, 15%);
     --dark-card: hsl(228, 28%, 20%);
+    --dark-card-hover: hsl(228, 25%, 27%);
     --dark-text-primary: hsl(0, 0%, 100%);
     --dark-text-sec: hsl(228, 34%, 66%);
 
@@ -26,4 +27,15 @@
     --light-card: hsl(227, 47%, 96%);
     --light-text-primary: hsl(230, 17%, 14%);
     --light-text-sec: hsl(228, 12%, 44%);
+
+    // Setting up variables
+    --background: var(--dark-bg);
+    --text: var(--dark-text-primary);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: var(--light-bg);
+        --text: var(--light-text-primary);
+    }
 }

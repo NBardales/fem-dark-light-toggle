@@ -32,7 +32,7 @@
     </div>
 
     <form class="toggle-container">
-      <div class="toggles">
+      <div class="toggles flip">
         <button type="button" id="styled" aria-pressed="false" onclick="toggle(this.id);">
           Dark Mode
         </button>
@@ -42,10 +42,9 @@
   
   <main>
     <section class="container cards summary">
-
       <div class="card large facebook">
         <header class="platform">
-          <img src="/images/icon-facebook.svg" alt="Facebook">
+          <img class="icon" src="/images/icon-facebook.svg" alt="Facebook">
           <p class="username">@nathanf</p>
         </header>
         <div class="content">
@@ -53,6 +52,7 @@
           <p class="label">Followers</p>
         </div>
         <footer class="change increase">
+          <img src="images/icon-up.svg" alt="up arrow">
           <p>12 Today</p>
         </footer>
       </div>
@@ -67,6 +67,7 @@
           <p class="label">Followers</p>
         </div>
         <footer class="change increase">
+          <img src="images/icon-up.svg" alt="up arrow">
           <p>99 Today</p>
         </footer>
       </div>
@@ -81,6 +82,7 @@
           <p class="label">Followers</p>
         </div>
         <footer class="change increase">
+          <img src="images/icon-up.svg" alt="up arrow">
           <p>1099 Today</p>
         </footer>
       </div>
@@ -95,117 +97,96 @@
           <p class="label">Subscribers</p>
         </div>
         <footer class="change decrease">
+          <img src="images/icon-down.svg" alt="down arrow">
           <p>144 Today</p>
         </footer>
       </div>
 
     </section>
 
-    <section class="container cards overview">
+    <section class="container">
       <h2> Overview - Today</h2>
 
-      <div class="card small facebook">
-        <header class="platform">
+      <div class="cards overview">
+        <div class="card small facebook">
           <p class="metric">Page Views</p>
           <img src="/images/icon-facebook.svg" alt="Facebook">
-        </header>
-        <div class="content">
           <p class="count">87</p>
+          <div class="change increase">
+            <img src="images/icon-up.svg" alt="up arrow">
+            <p>3%</p>
+          </div>
         </div>
-        <footer class="change increase">
-          <p>3%</p>
-        </footer>
-      </div>
 
-      <div class="card small facebook">
-        <header class="platform">
+        <div class="card small facebook">
           <p class="metric">Likes</p>
           <img src="/images/icon-facebook.svg" alt="Facebook">
-        </header>
-        <div class="content">
           <p class="count">52</p>
+          <div class="change decrease">
+            <img src="images/icon-down.svg" alt="down arrow">
+            <p>2%</p>
+          </div>
         </div>
-        <footer class="change decrease">
-          <p>2%</p>
-        </footer>
-      </div>
-
-      <div class="card small instagram">
-        <header class="platform">
+  
+        <div class="card small instagram">
           <p class="metric">Likes</p>
           <img src="/images/icon-instagram.svg" alt="Instagram">
-        </header>
-        <div class="content">
           <p class="count">5462</p>
+          <div class="change increase">
+            <img src="images/icon-up.svg" alt="up arrow">
+            <p>2257%</p>
+          </div>
         </div>
-        <footer class="change increase">
-          <p>2257%</p>
-        </footer>
-      </div>
-
-      <div class="card small instagram">
-        <header class="platform">
+  
+        <div class="card small instagram">
           <p class="metric">Profile Views</p>
           <img src="/images/icon-instagram.svg" alt="Instagram">
-        </header>
-        <div class="content">
           <p class="count">52k</p>
+          <div class="change increase">
+            <img src="images/icon-up.svg" alt="up arrow">
+            <p>1375%</p>
+          </div>
         </div>
-        <footer class="change increase">
-          <p>1375%</p>
-        </footer>
-      </div>
-
-      <div class="card small twitter">
-        <header class="platform">
+  
+        <div class="card small twitter">
           <p class="metric">Retweets</p>
           <img src="/images/icon-twitter.svg" alt="Twitter">
-        </header>
-        <div class="content">
           <p class="count">117</p>
+          <div class="change increase">
+            <img src="images/icon-up.svg" alt="up arrow">
+            <p>303%</p>
+          </div>
         </div>
-        <footer class="change increase">
-          <p>303%</p>
-        </footer>
-      </div>
-
-      <div class="card small twitter">
-        <header class="platform">
+  
+        <div class="card small twitter">
           <p class="metric">Likes</p>
           <img src="/images/icon-twitter.svg" alt="Twitter">
-        </header>
-        <div class="content">
           <p class="count">507</p>
+          <div class="change increase">
+            <img src="images/icon-up.svg" alt="up arrow">
+            <p>553%</p>
+          </div>
         </div>
-        <footer class="change increase">
-          <p>553%</p>
-        </footer>
-      </div>
-
-      <div class="card small youtube">
-        <header class="platform">
+  
+        <div class="card small youtube">
           <p class="metric">Likes</p>
           <img src="/images/icon-youtube.svg" alt="YouTube">
-        </header>
-        <div class="content">
           <p class="count">107</p>
+          <div class="change decrease">
+            <img src="images/icon-down.svg" alt="down arrow">
+            <p>19%</p>
+          </div>
         </div>
-        <footer class="change decrease">
-          <p>19%</p>
-        </footer>
-      </div>
-
-      <div class="card small youtube">
-        <header class="platform">
-          <p class="metric">Total Views</p>
-          <img src="/images/icon-youtube.svg" alt="YouTube">
-        </header>
-        <div class="content">
-          <p class="count">1407</p>
+  
+        <div class="card small youtube">
+            <p class="metric">Total Views</p>
+            <img src="/images/icon-youtube.svg" alt="YouTube">
+            <p class="count">1407</p>
+          <div class="change decrease">
+            <img src="images/icon-down.svg" alt="down arrow">
+            <p>12%</p>
+          </div>
         </div>
-        <footer class="change decrease">
-          <p>12%</p>
-        </footer>
       </div>
 
     </section>

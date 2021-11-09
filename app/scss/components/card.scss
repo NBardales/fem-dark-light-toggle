@@ -2,34 +2,38 @@
 // Research: if you use "use" you can use a namespace to differentiate between multiple styles.
 
 .cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(30);
+
     @include breakpoint(medium){
-        // set up a 2-col grid
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include breakpoint(large){
-        // set up a 4-col grid
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 .card {
     background: var(--dark-card);
     color: var(--dark-text-sec);
-    padding: rem(26);
-    border-radius: rem(3);
+    flex: 1;
+    padding: rem(25);
+    border-radius: rem(5);
     font-size: rem(12);
     font-weight: 700;
-    text-align: center;
-    
+    transition: background 150ms ease-in-out;
+
+    &:hover{
+        background: var(--dark-card-hover);
+    }
 
     // LARGE CARD
     &.large {
-        border-top: 4px solid;
-        margin-bottom: rem(24);
-
-        @include breakpoint(large){
-            max-width: rem(255);
-            max-height: rem(215);
-        }
+        border-top: rem(5) solid;
+        text-align: center;
+        //margin-bottom: rem(24);
 
         // VARIATIONS
         &.facebook {
@@ -41,20 +45,94 @@
         }
 
         /* Gradient borders aren't supported by using CSS (https://www.geeksforgeeks.org/gradient-borders) */
-    &.instagram {
-        border-color: var(--transparent);
-        border-image: linear-gradient(to right, var(--instagram-start), var(--instagram-end));
-        border-image-slice: 1;
-    }
+        &.instagram {
+            border-top: none;
+            position: relative;
+            overflow: hidden;
+            padding: rem(30);
 
-    &.youtube {
-        border-color: var(--youtube);
-    }
+            &::before {
+                content:"";
+                position:absolute;
+                top: 0;
+                left: 0;
+                padding: rem(3);
+                width: 100%;
+                background: linear-gradient(45deg, var(--instagram-start), var(--instagram-end));
+                mask-composite: exclude; 
+            }
+        }
+
+        &.youtube {
+            border-color: var(--youtube);
+        }
+
+        // CARD HEADER
+        & .platform {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: rem(28);
+            height: rem(20);
+
+            // Platform icon
+            & img {
+                margin-right: 8px;
+            }
+
+            // .username {}
+        }
+
+        //CARD CONTENT
+        & .content {
+            margin-bottom: rem(25);
+            
+            & .count {
+                font-size: rem(56);
+            }
+
+            & .label {
+                text-transform: uppercase;
+                font-weight: 400;
+                letter-spacing: rem(5);
+            }
+        }
     }
 
     // SMALL CARD
     &.small {
-        margin-bottom: rem(16);
+        display: grid;
+        /*margin-bottom: rem(16);*/
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: rem(22.5);
+        justify-content: space-between;
+        align-items: center;
+
+        /*
+        & .platform {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }*/
+
+        .metric {
+            font-size: rem(14);
+        }
+
+        .count{
+            font-size: rem(32);
+            color: var(--dark-text-primary);
+            margin-bottom: 0;
+        }
+
+        .count, .change {
+            align-self: end;
+        }
+
+        img, .change {
+            justify-self: end;
+        }
     }
 
     // RESET PARAGRAPH STYLES FOR CARD ONLY
@@ -62,56 +140,31 @@
         margin: 0;
         padding: 0;
         line-height: 1.1;
-    }    
+    }
 
-    // CARD HEADER
-    .platform {
+    & .count {
+        color: var(--dark-text-primary);
+        letter-spacing: rem(-2);
+        line-height: 1;
+        margin-bottom: rem(4);
+    }
+
+    // STAT CHANGE
+    & .change {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
 
-        // .icon {}
-
-        // .username {}
-    }
-
-    //CARD CONTENT
-    .content {
-        
-        .count {
-            color: var(--dark-text-primary);
-            font-size: rem(56);
-            letter-spacing: rem(-2);
-        }
-
-        .label {
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 0.5em;
-        }
-    }
-
-    // CARD FOOTER
-    .change {
-
-        & p{
-            display: inline-block;
+        & img{
+            margin-right: rem(4);
         }
 
         &.increase {
             color: var(--change-up);
-
-            &::before{
-                content: "▴";
-            }
         }
 
         &.decrease {
             color: var(--change-down);
-
-            &::before{
-                content: "▾";
-            }
         }
     }
 

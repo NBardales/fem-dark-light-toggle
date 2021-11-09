@@ -27,7 +27,7 @@ https://codepen.io/aardrian/pen/JgLGPB
     }
 
     &[disabled]::before {
-        background-color: transparent;
+        /*background-color: transparent;*/
         border-color: #ddd;
     }
 
@@ -60,7 +60,7 @@ https://codepen.io/aardrian/pen/JgLGPB
         width: rem(48);
         height: rem(24);
         /*border: 1px solid var(--dark-bg);*/
-        background: linear-gradient(225deg, var(--toggle-bg-start) 0%, var(--toggle-bg-end) 98.02%);
+        background: var(--toggle);
         border-radius: 1.1em;
     }
 
@@ -76,7 +76,7 @@ https://codepen.io/aardrian/pen/JgLGPB
     }
 
     // Focus and Hover Styles
-    &:focus, &:hover {
+    /*&:focus, &:hover {
         color: #00f;
         outline: none;
     }
@@ -90,20 +90,21 @@ https://codepen.io/aardrian/pen/JgLGPB
         background-size: 30%;
         background-repeat: no-repeat;
         background-position: center center;
-    }
+    }*/
 }
 
 .toggles [aria-pressed=true] {
 
     &::after {
         left: 1.6em;
+        /*
         border-color: #36a829;
         color: #36a829;
+        */
     }
 
     &::before {
-        background-color: #36a829;
-        border-color: #36a829;
+      background: linear-gradient(225deg, var(--toggle-bg-start) 0%, var(--toggle-bg-end) 98.02%);
     }
 }
 
@@ -117,11 +118,11 @@ https://codepen.io/aardrian/pen/JgLGPB
 
 .toggles.flip [aria-pressed]::after {
   left: auto;
-  right: 1.6em;
+  right: rem(27);
 }
 
 .toggles.flip [aria-pressed=true]::after {
-  right: 0;
+  right: rem(3);
 }
 
 .toggles.flip [aria-pressed] {
@@ -139,9 +140,9 @@ https://codepen.io/aardrian/pen/JgLGPB
     .toggles [aria-pressed]::after {
       background-color: windowText;
     }
-    .toggles [aria-pressed][disabled]::after {
+    /*.toggles [aria-pressed][disabled]::after {
       background-color: transparent;
-    }
+    }*/
   }
   
   /* Reduced motion */
