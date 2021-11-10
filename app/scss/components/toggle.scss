@@ -6,24 +6,87 @@ https://adrianroselli.com/2019/08/under-engineered-toggles-too.html
 https://codepen.io/aardrian/pen/JgLGPB
 */
 
+.toggle-container{
+  padding-top: rem(16);
+}
+
+.toggles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label{
+      font-size: rem(14);
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding-right: rem(26);
+    }
+}
+
 .toggles [aria-pressed] {
-    display: block;
+    // display: block;
     box-sizing: border-box;
     border: none;
-    color: inherit;
     background: none;
     // font: inherit;
-    font-size: rem(14);
-    color: var(--dark-text-sec);
+    font-size: rem(10);
+    color: var(--text-secondary);
     font-weight: 700;
     line-height: inherit;
     text-align: left;
-    padding: rem(6) 0 rem(6) rem(60);
+    padding: rem(6) 0 rem(6) rem(0);
     position: relative;
+    visibility: hidden;
+
+    // Toggle Switch Styled
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        transition: all 0.25s ease;
+    }
+
+    &::before {
+        left: 0;
+        top: 0.2em;
+        width: rem(48);
+        height: rem(24);
+        /*border: 1px solid var(--dark-bg-end);*/
+        background: linear-gradient(225deg, var(--toggle-bg-start) 0%, var(--toggle-bg-end) 98.02%);
+        border-radius: rem(15);
+        visibility: visible;
+    }
+
+    &::after {
+        left: rem(3);
+        top: rem(5);
+        background-color: var(--toggle-switch);
+        border-radius: 50%;
+        width: rem(18);
+        height: rem(18);
+        /*border: 1px solid white;*/
+        visibility: visible;
+    }
+
+    // Focus and Hover Styles
+    /*&:focus, &:hover {
+        color: #00f;
+        outline: none;
+    }
+
+    &:focus::before, &:hover::before {
+        box-shadow: 0 0 0.5em #333;
+    }*/
+
+    &:focus::after, &:hover:after {
+        background-color: var(--toggle-switch);
+        background-size: 30%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 
     // Disabled Styles
     &[disabled], &[disabled]:hover {
-        color: #999;
+      color: #999;
     }
 
     &[disabled]::before {
@@ -46,51 +109,6 @@ https://codepen.io/aardrian/pen/JgLGPB
     &[disabled]:hover::after {
         background-image: none;
     }
-
-    // Before and After Styles
-    &::before, &::after {
-        content: "";
-        position: absolute;
-        transition: all 0.25s ease;
-    }
-
-    &::before {
-        left: 0;
-        top: 0.2em;
-        width: rem(48);
-        height: rem(24);
-        /*border: 1px solid var(--dark-bg);*/
-        background: var(--toggle);
-        border-radius: 1.1em;
-    }
-
-    &::after {
-        left: rem(3);
-        top: rem(5);
-        background-color: var(--dark-bg);
-        background-position: center center;
-        border-radius: 50%;
-        width: rem(18);
-        height: rem(18);
-        /*border: 1px solid white;*/
-    }
-
-    // Focus and Hover Styles
-    /*&:focus, &:hover {
-        color: #00f;
-        outline: none;
-    }
-
-    &:focus::before, &:hover::before {
-        box-shadow: 0 0 0.5em #333;
-    }
-
-    &:focus::after, &:hover:after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='rgba(0,0,0,.25)'/%3E%3C/svg%3E");
-        background-size: 30%;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }*/
 }
 
 .toggles [aria-pressed=true] {
@@ -104,31 +122,31 @@ https://codepen.io/aardrian/pen/JgLGPB
     }
 
     &::before {
-      background: linear-gradient(225deg, var(--toggle-bg-start) 0%, var(--toggle-bg-end) 98.02%);
+      background: var(--toggle);
     }
 }
 
-/* Put toggles on the right like the iOS the kids like */
+    /* Put toggles on the right like the iOS the kids like */
 
-.toggles.flip [aria-pressed]::before,
-.toggles.flip [aria-pressed]::after {
-  left: auto;
-  right: 0;
-}
+    .toggles.flip [aria-pressed]::before,
+    .toggles.flip [aria-pressed]::after {
+      left: auto;
+      right: 0;
+    }
 
-.toggles.flip [aria-pressed]::after {
-  left: auto;
-  right: rem(27);
-}
+    .toggles.flip [aria-pressed]::after {
+      left: auto;
+      right: rem(27);
+    }
 
-.toggles.flip [aria-pressed=true]::after {
-  right: rem(3);
-}
+    .toggles.flip [aria-pressed=true]::after {
+      right: rem(3);
+    }
 
-.toggles.flip [aria-pressed] {
-  padding-left: 0;
-  padding-right: 4em;
-}
+    .toggles.flip [aria-pressed] {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
 /* Windows High Contrast Mode Support */
 @media screen and (-ms-high-contrast: active) {

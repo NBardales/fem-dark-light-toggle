@@ -12,30 +12,66 @@
     --toggle-bg-start: hsl(146, 68%, 55%);
     --toggle-bg-end: hsl(210, 78%, 56%);
     --toggle: hsl(230, 22%, 74%);
+    --dark-toggle-switch: hsl(229, 25%, 27%);
+    --light-toggle-switch: hsl(234, 56%, 96%);
 
     // Dark Theme
-    --dark-bg: hsl(230, 17%, 14%);
-    --dark-top-bg: hsl(232, 19%, 15%);
+    --dark-bg-end: hsl(230, 17%, 14%);
+    --dark-bg-start: hsl(232, 19%, 15%);
     --dark-card: hsl(228, 28%, 20%);
     --dark-card-hover: hsl(228, 25%, 27%);
     --dark-text-primary: hsl(0, 0%, 100%);
     --dark-text-sec: hsl(228, 34%, 66%);
+    --dark-header-border: hsl(232, 17%, 26%);
 
     // Light Theme
-    --light-bg: hsl(0, 0%, 100%);
-    --light-top-bg: hsl(225, 100%, 98%);
+    --light-bg-end: hsl(0, 0%, 100%);
+    --light-top-start: hsl(225, 100%, 98%);
     --light-card: hsl(227, 47%, 96%);
+    --light-card-hover: hsl(232, 33%, 91%);
     --light-text-primary: hsl(230, 17%, 14%);
     --light-text-sec: hsl(228, 12%, 44%);
+    --light-header-border: hsl(230, 8%, 57%);
 
-    // Setting up variables
-    --background: var(--dark-bg);
-    --text: var(--dark-text-primary);
+    // Default color scheme: Dark
+    --background: linear-gradient(180deg, var(--dark-bg-start) 0%, var(--dark-bg-start) 100%);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-sec);
+    --card: var(--dark-card);
+    --card-hover: var(--dark-card-hover);
+    --toggle-switch: var(--dark-toggle-switch);
+    --header-border: var(--dark-header-border);
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --background: var(--light-bg);
-        --text: var(--light-text-primary);
+        --background: linear-gradient(180deg, var(--light-bg-start) 0%, var(--light-bg-start) 100%);
+        --text-primary: var(--light-text-primary);
+        --text-secondary: var(--light-text-sec);
+        --card: var(--light-card);
+        --card-hover: var(--light-card-hover);
+        --toggle-switch: var(--light-toggle-switch);
+        --header-border: var(--light-header-border);
     }
 }
+
+    // Prepping the theme toggle
+    body.light {
+        --background: linear-gradient(180deg, var(--light-bg-start) 0%, var(--light-bg-start) 100%);
+        --text-primary: var(--light-text-primary);
+        --text-secondary: var(--light-text-sec);
+        --card: var(--light-card);
+        --card-hover: var(--light-card-hover);
+        --toggle-switch: var(--light-toggle-switch);
+        --header-border: var(--light-header-border);
+    }
+
+    body.dark {
+        --background: linear-gradient(180deg, var(--dark-bg-start) 0%, var(--dark-bg-start) 100%);
+        --text-primary: var(--dark-text-primary);
+        --text-secondary: var(--dark-text-sec);
+        --card: var(--dark-card);
+        --card-hover: var(--dark-card-hover);
+        --toggle-switch: var(--dark-toggle-switch);
+        --header-border: var(--dark-header-border);
+    }

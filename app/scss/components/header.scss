@@ -9,14 +9,19 @@
     align-items: center;
 }
 
-    /* .title {
-
-    } */
-
     .subtitle {
+        display: inline-block;
+        width: 100%;
         font-size: rem(14);
         font-weight: 700;
-        color: var(--dark-text-sec);
+        color: var(--text-secondary);
         letter-spacing: 0;
+        padding-bottom: rem(24);
+        border-bottom: 1px solid var(--header-border);
+
+        @include breakpoint(medium){
+            padding-bottom: 0;
+            border-bottom: none;
+        }
     }
 }

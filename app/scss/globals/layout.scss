@@ -3,7 +3,7 @@
 .container {
     padding: 0 rem(25);
     max-width: rem(1100);
-    margin: 0 auto rem(46);
+    margin: 0 auto rem(40);
     
     @include breakpoint(large){
         padding: 0;
