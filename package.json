@@ -23,5 +23,8 @@
     "gulp-terser": "^2.1.0",
     "postcss": "^8.3.11",
     "sass": "^1.43.4"
+  },
+  "devDependencies": {
+    "gulp-gh-pages": "^0.5.4"
   }
 }
